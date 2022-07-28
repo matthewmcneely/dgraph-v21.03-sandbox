@@ -1,0 +1,12 @@
+type Category {
+    id: ID!
+
+    name: String! @search(by: [hash])
+}
+
+type Product {
+    id: ID!
+
+    category: Category
+    currentPrice: Float!
+}

@@ -1,0 +1,27 @@
+query q {
+	productsUnordered as var(func: has(Product.currentPrice)) @cascade {
+		Product.category @filter(eq(Category.name, "Tops")) {
+			uid		
+    }
+  }  
+	productsDescOrder as var(func: has(Product.currentPrice), orderdesc: Product.currentPrice) @cascade {
+		Product.category @filter(eq(Category.name, "Tops")) {
+			uid		
+    }
+  }  
+	productsAscOrder as var(func: has(Product.currentPrice), orderasc: Product.currentPrice) @cascade {
+		Product.category @filter(eq(Category.name, "Tops")) {
+			uid		
+    }
+  }    
+
+  unordered_count(func: uid(productsUnordered)) {
+		count(uid)
+  }
+  desc_ordered_count(func: uid(productsDescOrder)) {
+		count(uid)
+  }
+  asc_ordered_count(func: uid(productsAscOrder)) {
+		count(uid)
+  }
+}

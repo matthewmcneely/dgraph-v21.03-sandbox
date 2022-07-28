@@ -1,0 +1,476 @@
+[
+    {
+        "dgraph.type": "Category",
+        "Category.name": "Tops",
+        "uid": "_:category-tops"
+    },
+    {
+        "dgraph.type": "Category",
+        "Category.name": "Bottoms",
+        "uid": "_:category-bottoms"
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-tops"
+        },
+        "Product.currentPrice": 5
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.currentPrice": 5
+    },                                        
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-bottoms"
+        },
+        "Product.currentPrice": 1
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-bottoms"
+        },
+        "Product.currentPrice": 2
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-bottoms"
+        },
+        "Product.currentPrice": 3
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-bottoms"
+        },
+        "Product.currentPrice": 4
+    },
+    {
+        "dgraph.type": "Product",
+        "Product.category": {
+            "uid": "_:category-bottoms"
+        },
+        "Product.currentPrice": 5
+    }
+]

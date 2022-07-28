@@ -1,0 +1,23 @@
+query QueryProduct($filter: CategoryFilter, $order: ProductOrder) {
+  queryProduct(order: $order) @cascade(fields: ["category"]) {
+    id
+    currentPrice
+    category(filter: $filter) {
+      name
+    }
+  }
+}
+
+
+variables:
+
+{
+  "filter": {
+    "name": {
+      "eq": "Tops"
+    }
+  },
+  "order": {
+    "asc": "currentPrice"
+  }
+}
