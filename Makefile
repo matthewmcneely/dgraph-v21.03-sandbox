@@ -20,6 +20,10 @@ drop-data:
 drop-all:
 	curl -X POST localhost:8080/alter -d '{"drop_all": true}'
 
+# Loads data from the data.json file
 load-data:
 	docker run -it -v $(current_dir):/export dgraph/dgraph:v21.03.0 dgraph live -a host.docker.internal:9080 -z host.docker.internal:5080 -f /export/data.json
-	
+
+# Runs the query present in query.dql
+query-dql:
+	curl --data-binary '@./query.dql' -H "Content-Type: application/dql" -X POST localhost:8080/query | jq
