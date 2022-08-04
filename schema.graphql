@@ -1,0 +1,23 @@
+type User  {
+  id: ID!
+  username: String! @id @search(by: [fulltext])
+  scores: [GameScore]! @hasInverse(field: "user")
+  high_score: GameScore @lambda
+}
+
+type GameScore {
+  user: User!
+  record_date: DateTime!
+  score: Int!
+}
+
+type Guest {
+  id: ID!
+  guest_name: String
+  guest_visit_dates: [DateTime]
+  guest_visit_count: Int @lambda
+}
+
+type Mutation {
+    newUserWithScores(username: String!, scores: [Int]): ID! @lambda
+}
