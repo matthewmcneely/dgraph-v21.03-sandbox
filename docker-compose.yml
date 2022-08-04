@@ -21,4 +21,17 @@ services:
       - 8080:8080
       - 9080:9080
     restart: on-failure
-    command: dgraph alpha --my=alpha:7080 --zero=zero:5080 --security whitelist=0.0.0.0/0
+    command: >
+      dgraph alpha --my=alpha:7080 --zero=zero:5080
+        --security whitelist=0.0.0.0/0 
+        --graphql lambda-url=http://host.docker.internal:8686/graphql-worker
+        -v-2
+  lambda: 
+    image: dgraph/dgraph-lambda:1.4.0
+    volumes:
+      - ./scripts/script.js:/app/script/script.js:ro
+    environment:
+      - DGRAPH_URL=http://host.docker.internal:8080
+      - MAX_MEMORY_LIMIT=256M
+    ports:
+      - 8686:8686
