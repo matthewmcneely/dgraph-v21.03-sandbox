@@ -25,7 +25,7 @@ services:
       dgraph alpha --my=alpha:7080 --zero=zero:5080
         --security whitelist=0.0.0.0/0 
         --graphql lambda-url=http://host.docker.internal:8686/graphql-worker
-        -v-2
+        -v=2
   lambda: 
     image: dgraph/dgraph-lambda:1.4.0
     volumes:
