@@ -26,4 +26,7 @@ load-data:
 
 # Runs the query present in query.dql
 query-dql:
-	curl --data-binary '@./query.dql' -H "Content-Type: application/dql" -X POST localhost:8080/query | jq
+	@curl --data-binary '@./query.dql' -H "Content-Type: application/dql" -X POST localhost:8080/query
+
+query-gql:
+	@gql file --query-file query.gql --variables-file variables.json --endpoint http://localhost:8080/graphql

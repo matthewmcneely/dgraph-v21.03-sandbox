@@ -6,8 +6,9 @@ done with `make`, the only other requirement is Docker and optionally `jq`.
 #### Requirements
 - Docker
 - make
-- curl (for queries from the command line)
-- jq (for queries from the command line)
+- curl (optional, for queries from the command line)
+- gql (optional, for graphql queries, download from [here](https://github.com/matthewmcneely/gql/tree/feature/add-query-and-variables-from-file/builds))
+- jq (optional, for queries from the command line)
 
 ## Steps
 
@@ -28,9 +29,15 @@ make schema
 make load-data
 ```
 
-5. If there's some DQL query or mutation that needs to be applied for debugging/testing
+5. If there's some DQL query or mutation that needs to be applied for debugging/testing (this command loads the query in `query.dql`)
 ```
-make query-dql
+make query-dql | jq
 ```
 
-If there's a graphql query to be applied, see the query.graphql file for the query and variables (you'll have to pop those into your favorite GraphQL client, use the http://localhost:8080/graphql endpoint)
+6. If there's a graphql query or mutation that needs to be applied for debugging/testing (this command loads the query in `query.gql` and `variables.json`)
+```
+make query-gql | jq
+```
+
+Alternatively, you can pop the content of those files into your favorite GraphQL client, use the http://localhost:8080/graphql endpoint.
+
