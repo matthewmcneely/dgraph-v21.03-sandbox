@@ -1,0 +1,35 @@
+type TestDto @generate(
+  query: {
+    get: true,
+    query: true,
+    password: false,
+    aggregate: true
+  },
+  mutation: {
+    add: false,
+    update: false,
+    delete: false
+  },
+  subscription: false
+) {
+  mrId: String! @search(by: [hash])
+  targetObjects: [TestDto] 
+}
+
+type Query {
+
+  queryTestDtoSubtree(mrId: String!): [TestDto] @custom(dql: """
+    query q($mrId: string!) {
+
+      var(func: eq(TestDto.mrId, $mrId)) @recurse(depth: 300, loop: false) {
+        descendants as TestDto.targetObjects
+      }
+
+      queryTestDtoSubtree(func: uid(descendants)) {
+        mrId: TestDto.mrId
+      }
+
+    }
+  """)
+
+}

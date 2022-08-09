@@ -1,0 +1,27 @@
+[
+    {
+        "dgraph.type": "TestDto",
+        "TestDto.mrId": "mynodeid1",
+        "uid": "_:x",
+        "TestDto.targetObjects": [
+            {
+                "uid": "_:y"
+            }
+        ]
+    },
+    {
+        "dgraph.type": "TestDto",
+        "TestDto.mrId": "mynodeid2",
+        "uid": "_:y",
+        "TestDto.targetObjects": [
+            {
+                "uid": "_:z"
+            }
+        ]
+    },
+    {
+        "dgraph.type": "TestDto",
+        "TestDto.mrId": "mynodeid3",
+        "uid": "_:z"
+    }    
+]

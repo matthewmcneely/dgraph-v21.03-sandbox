@@ -4,7 +4,7 @@ services:
 
   # Dgraph Zero controls the cluster
   zero:
-    image: dgraph/dgraph:v21.03.0
+    image: dgraph/dgraph:v21.03.2
     volumes:
       - ./data:/dgraph
     ports:
@@ -14,7 +14,7 @@ services:
     command: dgraph zero --my=zero:5080
   # Dgraph Alpha hosts the graph and indexes
   alpha:
-    image: dgraph/dgraph:v21.03.0
+    image: dgraph/dgraph:v21.03.2
     volumes:
       - ./data:/dgraph
     ports:
