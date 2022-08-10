@@ -1,0 +1,5 @@
+query ($mrId: String!) {
+  queryTestDtoSubtree(mrId: $mrId) {
+    mrId
+  }
+}
