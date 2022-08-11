@@ -22,7 +22,7 @@ drop-all:
 
 # Loads data from the data.json file
 load-data:
-	docker run -it -v $(current_dir):/export dgraph/dgraph:v21.03.0 dgraph live -a host.docker.internal:9080 -z host.docker.internal:5080 -f /export/data.json
+	docker run -it -v $(current_dir):/export dgraph/dgraph:v21.03.2 dgraph live -a host.docker.internal:9080 -z host.docker.internal:5080 -f /export/data.json
 
 # Runs the query present in query.dql
 query-dql:
