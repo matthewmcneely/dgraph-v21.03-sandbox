@@ -1,0 +1,19 @@
+[
+    {
+        "uid": "_:guest1",
+        "dgraph.type": "Guest",
+        "Guest.guest_name": "Matthew",
+        "Guest.guest_visit_dates": [
+            "2022-08-10",
+            "2021-07-01"
+        ]
+    },
+    {
+        "uid": "_:guest2",
+        "dgraph.type": "Guest",
+        "Guest.guest_name": "Christine",
+        "Guest.guest_visit_dates": [
+            "2022-08-10"
+        ]
+    }
+]
