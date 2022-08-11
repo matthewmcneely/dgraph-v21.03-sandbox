@@ -43,8 +43,14 @@ async function calculateHighScore({parent, graphql}) {
     }
 }
 
+async function visitCount( { parent } ) {
+    console.log(parent);
+    return parent.guest_visit_dates.length;
+}
+
 self.addGraphQLResolvers({
-    "User.high_score": calculateHighScore
+    "User.high_score": calculateHighScore,
+    "Guest.guest_visit_count": visitCount
 })
 
 
