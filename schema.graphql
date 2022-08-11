@@ -1,16 +1,3 @@
-type User  {
-  id: ID!
-  username: String! @id @search(by: [fulltext])
-  scores: [GameScore]! @hasInverse(field: "user")
-  high_score: GameScore @lambda
-}
-
-type GameScore {
-  user: User!
-  record_date: DateTime!
-  score: Int!
-}
-
 type Guest {
   id: ID!
   guest_name: String
@@ -18,6 +5,22 @@ type Guest {
   guest_visit_count: Int @lambda
 }
 
-type Mutation {
-    newUserWithScores(username: String!, scores: [Int]): ID! @lambda
+type Query {
+  queryGuestsByMinVisits(visits: Int!): [Guest] @custom(dql: """
+    query q($visits: int) {
+        var(func: type(Guest)) {
+            {
+                visitCount as count(Guest.guest_visit_dates)
+            }
+        }
+    
+        queryGuestsByMinVisits(func: uid(visitCount)) @filter(ge(val(visitCount), $visits)) {
+            id: uid
+            guest_name: Guest.guest_name
+            guest_visit_dates: Guest.guest_visit_dates
+            guest_visit_count: val(visitCount)
+        }
+    }
+	"""
+    )
 }
