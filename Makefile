@@ -1,12 +1,14 @@
+DGRAPH_VERSION = v21.03.2
+
 current_dir = $(shell pwd)
 
 # Start the zero and alpha containers
 up:
-	docker-compose up
+	DGRAPH_VERSION=$(DGRAPH_VERSION) docker-compose up
 
 # Stop the containers
 stop:
-	docker-compose stop
+	DGRAPH_VERSION=$(DGRAPH_VERSION) docker-compose stop
 
 # Load/update the GraphQL schema
 schema:
@@ -22,7 +24,7 @@ drop-all:
 
 # Loads data from the data.json file
 load-data:
-	docker run -it -v $(current_dir):/export dgraph/dgraph:v21.03.0 dgraph live -a host.docker.internal:9080 -z host.docker.internal:5080 -f /export/data.json
+	docker run -it -v $(current_dir):/export dgraph/dgraph:$(DGRAPH_VERSION) dgraph live -a host.docker.internal:9080 -z host.docker.internal:5080 -f /export/data.json
 
 # Runs the query present in query.dql
 query-dql:
