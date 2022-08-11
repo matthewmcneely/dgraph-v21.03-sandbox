@@ -1,2 +1,52 @@
 [
+    {
+        "uid": "_:bob1",
+        "dgraph.type": ["Student", "INode"],
+        "Student.address": "20 Bobby Way",
+        "Student.firstName": {
+            "dgraph.type": "SearchableString",
+            "SearchableString.value": "Bob",
+            "SearchableString.owner": {
+                "uid": "_:bob1"
+            }
+        },
+        "Student.lastName": {
+            "dgraph.type": "SearchableString",
+            "SearchableString.value": "Smith",
+            "SearchableString.owner": {
+                "uid": "_:bob1"
+            }
+        }
+    },
+    {
+        "uid": "_:bob2",
+        "dgraph.type": ["Student", "INode"],
+        "Student.address": "10 Bobber Dr",
+        "Student.firstName": {
+            "dgraph.type": "SearchableString",
+            "SearchableString.value": "Larry",
+            "SearchableString.owner": {
+                "uid": "_:bob2"
+            }
+        },
+        "Student.lastName": {
+            "dgraph.type": "SearchableString",
+            "SearchableString.value": "Bobbert",
+            "SearchableString.owner": {
+                "uid": "_:bob2"
+            }
+        }
+    },
+    {
+        "uid": "_:bob3",
+        "dgraph.type": ["Teacher", "INode"],
+        "Teacher.officeAddress": "Office 123",
+        "Teacher.fullName": {
+            "dgraph.type": "SearchableString",
+            "SearchableString.value": "James Bob McSally",
+            "SearchableString.owner": {
+                "uid": "_:bob3"
+            }
+        }
+    }
 ]

@@ -1,0 +1,21 @@
+interface INode {
+    id: ID!
+}
+
+type SearchableString {
+    value: String! @search(by: [hash, term, fulltext, regexp])
+    owner: INode 
+}
+
+type Student implements INode {
+    firstName: SearchableString
+    lastName: SearchableString
+
+    address: String
+}
+
+type Teacher implements INode {
+    fullName: SearchableString
+
+    officeAddress: String
+}

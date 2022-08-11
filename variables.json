@@ -1,2 +1,14 @@
 {
-}
+    "filter": {
+      "value": {
+        "allofterms": "bob"
+      },
+      "or": [
+        {
+          "value": {
+            "regexp": "/[Bb]ob/"
+          }
+        }
+      ]
+    }
+  }

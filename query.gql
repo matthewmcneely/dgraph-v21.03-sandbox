@@ -1,2 +1,24 @@
-query {
+query QuerySearchableString($filter: SearchableStringFilter) {
+  querySearchableString(filter: $filter) {
+    owner {
+      __typename
+      ... on Student {
+        id
+        firstName {
+          value
+        }
+        lastName {
+          value
+        }
+        address
+      }
+      ... on Teacher {
+        id
+        fullName {
+          value
+        }
+        officeAddress
+      }
+    }
+  }
 }
