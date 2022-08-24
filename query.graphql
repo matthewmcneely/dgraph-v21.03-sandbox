@@ -1,0 +1,6 @@
+query {
+  queryConsumer {
+    id
+    name
+  }
+}
