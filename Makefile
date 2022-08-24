@@ -31,4 +31,20 @@ query-dql:
 	@curl --data-binary '@./query.dql' -H "Content-Type: application/dql" -X POST localhost:8080/query
 
 query-gql:
-	@gql file --query-file query.gql --variables-file variables.json --endpoint http://localhost:8080/graphql
+ifeq (, $(shell which gql))
+	@echo "No gql in $(PATH), download from https://github.com/matthewmcneely/gql/tree/feature/add-query-and-variables-from-file/builds"
+else
+	@gql file --query-file query.graphql --variables-file variables.json --endpoint http://localhost:8080/graphql
+endif
+
+query-gql-auth:
+ifeq (, $(shell which jwt))
+	@echo "No jwt in $(PATH), download from https://github.com/mike-engel/jwt-cli"
+else
+	@echo "Encoding claims in jwt.json"
+	$(eval CLAIMS := $(shell cat jwt.json))
+	$(eval TOKEN := $(shell jwt encode --secret vDK59uv+QxbuRpwdcFyYdTlLahaFDG0g2rf7+pc+jkk= '$(CLAIMS)'))
+	@echo "Issuing query with JWT token in header"
+	@gql file --query-file query.graphql --endpoint http://localhost:8080/graphql --header X-myapp=$(TOKEN)
+endif
+
