@@ -24,20 +24,25 @@ make up
 make schema
 ```
 
+This schema contains @auth directives for the sole Consumer type to prevent queries from non-authenticated users.
+
 4. Load the sample data
 ```
 make load-data
 ```
 
-5. If there's some DQL query or mutation that needs to be applied for debugging/testing (this command loads the query in `query.dql`)
+5. Check out the `jwt.json` file. These are the claims that will get encoded into a JWT token and send to the query via headers.
+
+6. Try issuing the query (in query.graphql), there should be no results.
+
 ```
-make query-dql | jq
+make query-gql
 ```
 
-6. If there's a graphql query or mutation that needs to be applied for debugging/testing (this command loads the query in `query.gql` and `variables.json`)
+7. Try issuing the query by encoding a JWT Token (requires the jwt cli tool available from https://github.com/mike-engel/jwt-cli)
+
 ```
-make query-gql | jq
+make query-gql-auth
 ```
 
-Alternatively, you can pop the content of those files into your favorite GraphQL client, use the http://localhost:8080/graphql endpoint.
-
+The results should only show user "Matthew".
