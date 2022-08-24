@@ -1,2 +1,14 @@
 [
+    {
+        "dgraph.type": "Consumer",
+        "Consumer.name": "Matthew"
+    },
+    {
+        "dgraph.type": "Consumer",
+        "Consumer.name": "John"
+    },
+    {
+        "dgraph.type": "Consumer",
+        "Consumer.name": "Mary"
+    }
 ]
