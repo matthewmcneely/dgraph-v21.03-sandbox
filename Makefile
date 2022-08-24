@@ -30,6 +30,7 @@ load-data:
 query-dql:
 	@curl --data-binary '@./query.dql' -H "Content-Type: application/dql" -X POST localhost:8080/query
 
+# Runs the query present in query.graphql
 query-gql:
 ifeq (, $(shell which gql))
 	@echo "No gql in $(PATH), download from https://github.com/matthewmcneely/gql/tree/feature/add-query-and-variables-from-file/builds"
@@ -37,6 +38,8 @@ else
 	@gql file --query-file query.graphql --variables-file variables.json --endpoint http://localhost:8080/graphql
 endif
 
+# Runs the query present in query.graphql with the JWT token in the header
+# Note the 32 byte secret was generated for this demo only. Do not use this in production (generate your own).
 query-gql-auth:
 ifeq (, $(shell which jwt))
 	@echo "No jwt in $(PATH), download from https://github.com/mike-engel/jwt-cli"

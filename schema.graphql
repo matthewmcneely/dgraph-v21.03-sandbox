@@ -13,4 +13,5 @@ type Consumer @auth(
   name: String! @id
 }
 
+# Note the VerificationKey below should never be used elsewhere. It was randomly generated for this demo.
 # Dgraph.Authorization {"VerificationKey":"vDK59uv+QxbuRpwdcFyYdTlLahaFDG0g2rf7+pc+jkk=","Header":"X-myapp","Namespace":"https://myapp.com/jwt/claims","Algo":"HS256","Audience":["myapp"]}
