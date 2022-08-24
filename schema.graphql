@@ -1,0 +1,16 @@
+type Consumer @auth(
+    query: {
+      rule: """
+      query ($NAME: String!) {
+        queryConsumer(filter: {name: {eq: $NAME}}) {
+          id
+        }
+      }
+      """
+    }
+  ) {
+  id: ID!
+  name: String! @id
+}
+
+# Dgraph.Authorization {"VerificationKey":"vDK59uv+QxbuRpwdcFyYdTlLahaFDG0g2rf7+pc+jkk=","Header":"X-myapp","Namespace":"https://myapp.com/jwt/claims","Algo":"HS256","Audience":["myapp"]}
