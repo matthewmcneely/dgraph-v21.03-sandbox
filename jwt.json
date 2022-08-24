@@ -1,0 +1,7 @@
+{
+    "https://myapp.com/jwt/claims": {
+      "USER_ID": "0x4853a3",
+      "NAME": "Matthew"
+    },
+    "aud": "myapp"
+}
