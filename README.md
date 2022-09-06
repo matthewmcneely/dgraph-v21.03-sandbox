@@ -26,7 +26,7 @@ To spin one up with lambda support: `make up-with-lambda`.
 make schema-dql
 ```
 
-## All `make` targets
+or `make schema-gql` for an SDL-based one.
 
 ## Make targets
 
