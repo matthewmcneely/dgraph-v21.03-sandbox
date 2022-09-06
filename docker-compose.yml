@@ -1,37 +1,33 @@
 version: "3.8"
 
+#
+# A simple compose file for running single zero and alpha
+#
 services:
 
   # Dgraph Zero controls the cluster
   zero:
     image: dgraph/dgraph:$DGRAPH_VERSION
+    container_name: test_dgraph_zero
     volumes:
-      - ./data:/dgraph
+      - ~/test-dgraph-data:/dgraph
     ports:
       - 5080:5080
       - 6080:6080
-    restart: on-failure
-    command: dgraph zero --my=zero:5080
+    command: dgraph zero --my=zero:5080 --logtostderr -v=2 --telemetry sentry=false
+    restart: unless-stopped
   # Dgraph Alpha hosts the graph and indexes
   alpha:
     image: dgraph/dgraph:$DGRAPH_VERSION
+    container_name: test_dgraph_alpha
     volumes:
-      - ./data:/dgraph
+      - ~/test-dgraph-data:/dgraph
     ports:
       - 8080:8080
       - 9080:9080
-    restart: on-failure
     command: >
       dgraph alpha --my=alpha:7080 --zero=zero:5080
-        --security whitelist=0.0.0.0/0 
-        --graphql lambda-url=http://host.docker.internal:8686/graphql-worker
-        -v=2
-  lambda: 
-    image: dgraph/dgraph-lambda:1.4.0
-    volumes:
-      - ./scripts/script.js:/app/script/script.js:ro
-    environment:
-      - DGRAPH_URL=http://host.docker.internal:8080
-      - MAX_MEMORY_LIMIT=256M
-    ports:
-      - 8686:8686
+        --security whitelist=0.0.0.0/0
+        --logtostderr -v=2
+        --telemetry sentry=false
+    restart: unless-stopped
