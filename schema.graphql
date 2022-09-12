@@ -1,0 +1,9 @@
+type Author {
+  id: ID!
+  name: String
+  reputation: Float
+}
+
+type Mutation {
+    newAuthor(name: String!): ID! @lambda
+}
