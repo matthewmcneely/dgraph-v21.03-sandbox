@@ -6,7 +6,7 @@ up: ## Start the zero and alpha containers
 	DGRAPH_VERSION=$(DGRAPH_VERSION) docker-compose up
 
 up-with-lambda: ## Start the zero and alpha containers and a lambda container
-	DGRAPH_VERSION=$(DGRAPH_VERSION) docker-compose -f docker-compose.yml -f docker-compose-lambda.yml up -d && docker-compose logs --follow alpha zero lambda keepalive
+	DGRAPH_VERSION=$(DGRAPH_VERSION) docker-compose -f docker-compose.yml -f docker-compose-lambda.yml up -d && docker-compose -f docker-compose.yml -f docker-compose-lambda.yml logs --follow alpha zero lambda
 
 down: ## Stop the containers
 	DGRAPH_VERSION=$(DGRAPH_VERSION) docker-compose stop
