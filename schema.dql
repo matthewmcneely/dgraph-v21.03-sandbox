@@ -1,0 +1,13 @@
+type BookCollection {
+	nid
+	collection.books
+}
+
+type Book {
+	nid
+	book_name
+}
+
+nid: string @index(hash) @upsert .
+collection.books: [uid] @count @reverse .
+book_name: string .

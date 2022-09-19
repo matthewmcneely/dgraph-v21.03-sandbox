@@ -69,5 +69,15 @@ else
 	@gql file --query-file query.gql --variables-file variables.json --endpoint http://localhost:8080/graphql
 endif
 
+# specific targets for this test
+load-rdf-file:
+	docker run -it -v $(current_dir):/export dgraph/dgraph:$(DGRAPH_VERSION) dgraph live -a host.docker.internal:9080 -z host.docker.internal:5080 -f /export/books.rdf
+
+upsert-query:
+	$(eval TMP := $(shell mktemp))
+	@sed 's/XXX/${COLLECTION}/' ./upsert.dql > $(TMP)
+	@curl --data-binary '@$(TMP)' -H "Content-Type: application/rdf" -X POST http://localhost:8080/mutate?commitNow=true
+	@rm $(TMP)
+
 help: ## Print target help
 	@grep -E '^[0-9a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

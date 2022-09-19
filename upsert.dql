@@ -1,0 +1,21 @@
+upsert {
+  query{
+    target as var(func:eq(nid, "XXX")) {
+      uid
+    }
+    books as var(func:type(Book), first: 100, offset: 0) {
+      uid
+    }
+  }
+
+  mutation {
+    delete {
+      uid(target) <collection.books> * .
+    }
+    set {
+      uid(target) <nid> "XXX" .
+      uid(target) <dgraph.type> "BookCollection" .
+      uid(target) <collection.books> uid(books) .
+    }
+  }  
+}

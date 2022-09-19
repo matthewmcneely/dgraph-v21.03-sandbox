@@ -10,6 +10,18 @@ done with `make`, the only other requirement is Docker and optionally `jq`.
 - gql (optional, for graphql queries, download from [here](https://github.com/matthewmcneely/gql/tree/feature/add-query-and-variables-from-file/builds))
 - jq (optional, for queries from the command line)
 
+## Branch-Specific Steps
+
+```
+make schema-dql
+make load-rdf-file
+COLLECTION=BAR make upsert-query
+make query-dql | jq                           #everything's good here
+COLLECTION=BAR make upsert-query
+make query-dql | jq                           #counts are off
+```
+
+
 ## Steps
 
 1. Clone this repo. It's possible I've created a branch for some issue we're collaborating on. If so, check out the branch for the issue.
