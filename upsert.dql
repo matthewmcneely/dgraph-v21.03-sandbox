@@ -3,7 +3,7 @@ upsert {
     target as var(func:eq(nid, "XXX")) {
       uid
     }
-    books as var(func:type(Book), first: 100, offset: 0) {
+    books as var(func:type(Book), first: 1000, offset: 0) {
       uid
     }
   }
