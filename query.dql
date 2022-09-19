@@ -3,9 +3,4 @@
     xid
     count(collection.books)
   }
-
-  books(func:type(Book)) @cascade{
-    count(uid)
-    ~collection.books @filter(eq(nid, "BAR"))
-  }    
 }

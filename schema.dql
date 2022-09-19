@@ -9,5 +9,5 @@ type Book {
 }
 
 nid: string @index(hash) @upsert .
-collection.books: [uid] @count @reverse .
+collection.books: [uid] @count .
 book_name: string .
