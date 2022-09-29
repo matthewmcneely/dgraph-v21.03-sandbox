@@ -1,0 +1,25 @@
+# Interface
+interface TestInterface {
+  id: ID!
+  field: String
+}
+
+# First type which implements TestInterface
+type FirstImplement implements TestInterface {
+  id: ID!
+  field: String
+  firstField: String
+}
+
+# Second type which implements TestInterface
+type SecondImplement implements TestInterface {
+  id: ID!
+  field: String
+  secondField: String
+}
+
+# Type which has TestInterface as field
+type HasInterfaceField {
+  id: ID!
+  interfaceField: TestInterface
+}

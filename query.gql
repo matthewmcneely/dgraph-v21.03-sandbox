@@ -1,2 +1,8 @@
 query {
+    queryHasInterfaceField {
+        __typename
+        interfaceField {
+            __typename
+        }
+    }
 }

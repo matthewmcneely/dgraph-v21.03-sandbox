@@ -1,4 +1,8 @@
 {
-	q() {
-	}
+  q(func: type(HasInterfaceField)) {
+	uid
+    HasInterfaceField.interfaceField {
+      dgraph.type
+    }
+  }
 }

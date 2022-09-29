@@ -1,5 +1,20 @@
 [
     {
-        
+        "uid": "_:first",
+        "dgraph.type": ["FirstImplement", "TestInterface"],
+        "TestInterface.field": "Some random field",
+        "FirstImplement.firstField": "Foo"
+    },
+    {
+        "uid": "_:second",
+        "dgraph.type": ["SecondImplement", "TestInterface"],
+        "TestInterface.field": "Some random field",
+        "SecondImplement.secondField": "Bar"
+    },
+    {
+        "dgraph.type": "HasInterfaceField",
+        "HasInterfaceField.interfaceField": {
+           "uid": "_:first"
+        }
     }
 ]
