@@ -1,5 +1,7 @@
 [
     {
-        
+        "dgraph.type": ["Post", "Allowable"],
+        "Allowable.allowed": false,
+        "Allowable.content": "You shouldn't be able to see this"
     }
 ]

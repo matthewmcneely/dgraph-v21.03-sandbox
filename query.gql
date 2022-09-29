@@ -1,2 +1,12 @@
 query {
+  queryPostContent {
+    x
+  }
+  
+  queryPost {
+    id
+    changes {
+      x
+    }
+  }
 }

@@ -1,0 +1,42 @@
+interface Approvable
+  @auth(
+    query: {
+      rule: """
+      query {
+        queryApprovable(filter: { approved: true }) {
+          id
+        }
+      }
+      """
+    }
+  ) {
+  id: ID!
+  approved: Boolean! @search
+  changes: [ApprovableChange!] @hasInverse(field: approvable)
+}
+
+type Post implements Approvable {
+  id: ID!
+  content: String
+}
+
+interface ApprovableChange
+  @auth(
+    query: {
+      rule: """
+      query {
+        queryApprovableChange(filter: { x: true, and: { x: false } }) {
+          x
+        }
+      }
+      """
+    }
+  ) {
+  x: Boolean! @search
+  approvable: Approvable! @hasInverse(field: changes)
+}
+
+type PostContent implements ApprovableChange {
+  id: ID!
+}
+

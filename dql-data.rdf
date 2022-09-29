@@ -1,4 +1,12 @@
 {
   set {
+<0x2> <dgraph.type> "Post"^^<xs:string> <0x0> .
+<0x2> <dgraph.type> "Approvable"^^<xs:string> <0x0> .
+<0x3> <dgraph.type> "ApprovableChange"^^<xs:string> <0x0> .
+<0x3> <dgraph.type> "PostContent"^^<xs:string> <0x0> .
+<0x2> <Approvable.changes> <0x3> <0x0> .
+<0x3> <ApprovableChange.x> "true"^^<xs:boolean> <0x0> .
+<0x2> <Approvable.approved> "true"^^<xs:boolean> <0x0> .
+<0x3> <ApprovableChange.approvable> <0x2> <0x0> .    
   }
 }

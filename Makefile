@@ -1,4 +1,4 @@
-DGRAPH_VERSION = v21.03.2
+DGRAPH_VERSION = local
 
 current_dir = $(shell pwd)
 
