@@ -17,7 +17,7 @@ interface Approvable
 
 type Post implements Approvable {
   id: ID!
-  content: String
+  content: String @search(by: [hash, fulltext])
 }
 
 interface ApprovableChange
