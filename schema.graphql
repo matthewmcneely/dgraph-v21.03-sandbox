@@ -2,8 +2,13 @@ type Author {
   id: ID!
   name: String
   reputation: Float
+  bio: String @lambda
 }
 
 type Mutation {
     newAuthor(name: String!): ID! @lambda
+}
+
+type Query {
+    authorsByName(name: String!): [Author] @lambda
 }
