@@ -1,4 +1,7 @@
 {
-	q() {
+	q(func: eq(cid3_1, 717), first: 1000) @filter(eq(brand_1, “GODEX”) and le(price_1, 2000)) {
+		sku_id_1
+		cid3_1
+		price_1
 	}
 }
