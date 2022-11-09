@@ -1,0 +1,21 @@
+sku_id_1: string @index(exact) @upsert .
+title_1: string @index(fulltext) .
+brand_1: string @index(hash) .
+cid3_1: string @index(hash) .
+price_1: float @index(float) .
+click_cnt_1: int @index(int) .
+attrs_1: string @index(term) .
+has_tag_1: [uid] @reverse @count .
+relate_sku_1: [uid] @count .
+
+type Product_1 {
+    sku_id_1
+    title_1
+    brand_1
+    cid3_1
+    price_1
+    click_cnt_1
+    attrs_1
+    has_tag_1
+    relate_sku_1
+}
