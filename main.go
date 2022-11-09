@@ -53,9 +53,6 @@ func randPriceInRange(min, max float64) float64 {
 }
 
 func createProducts(dg *dgo.Dgraph) {
-	op := api.Operation{DropAll: true}
-	check(dg.Alter(context.Background(), &op))
-
 	for n := 0; n < CIDGroups; n++ {
 		var products []Product
 		for m := 0; m < ProductsPerGroup; m++ {
